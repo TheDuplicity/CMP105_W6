@@ -6,6 +6,7 @@ protected:
 	float gravity;
 	float drag;
 	sf::RenderWindow* window;
+	sf::Vector2f direction;
 
 public:
 	ForcePhysics();
