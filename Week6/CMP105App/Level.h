@@ -2,6 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "Framework/Input.h"
+#include "ForcePhysics.h"
 #include <string.h>
 #include <iostream>
 
@@ -23,6 +24,7 @@ private:
 	// Default variables for level class.
 	sf::RenderWindow* window;
 	Input* input;
+	ForcePhysics* ballGravity;
 
 	// More level variables
 };

@@ -4,9 +4,12 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 {
 	window = hwnd;
 	input = in;
-
+	ballGravity = new ForcePhysics(window);
 	// initialise game objects
 
+	ballGravity->setPosition(window->getSize().x/2, window->getSize().y/10);
+	ballGravity->setSize(sf::Vector2f(100,100));
+	ballGravity->setFillColor(sf::Color::Blue);
 }
 
 Level::~Level()
@@ -23,13 +26,15 @@ void Level::handleInput(float dt)
 // Update game objects
 void Level::update(float dt)
 {
-
+	ballGravity->gravityUpdate(dt);
 }
 
 // Render level
 void Level::render()
 {
 	beginDraw();
+
+	window->draw(*ballGravity);
 
 	endDraw();
 }
